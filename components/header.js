@@ -5,7 +5,8 @@ let my_header= {
 			val:"",
 			detail:"添加",
 			tips:true,
-			checked:[]
+			checked:[],
+			person:[],
 		}
 },
 	template:`<header @mouseleave="laeve">
@@ -23,27 +24,39 @@ let my_header= {
 		},
 		clear(){
 			this.val=""
+			this.isShow = false
+			this.person=[]
+			eventBus.$emit("tips",this.person)
+			
 		},
 		blur(){
 //			this.isShow = !this.isShow
 //			this.isShow = false
 		},
 		search(){
-			eventBus.$emit("tip",this.tips)
-			this.detail = "完成",
-			eventBus.$emit("checkeds",this.checked)
+			if(this.val==""){
+				alert("请选择正确的添加内容")
+			}else{
+				eventBus.$emit("tip",this.tips)
+				this.detail = "完成",
+				eventBus.$emit("checkeds",this.checked)
+			}
+			
 		},
 		world(){
-			let person = [];
+			this.person = [];
 			for(var i in this.data){
 				if(this.data[i].name.includes(this.val)){
-					person.push(this.data[i])
+					this.person.push(this.data[i])
 				}
 			}
 			if(this.val==""){
-				person = []
+				this.person = []
+				this.isShow = false
+			}else{
+				this.isShow = true
 			}
-			eventBus.$emit("tips",person)
+			eventBus.$emit("tips",this.person)
 		},
 		laeve(){
 //			this.isShow = false

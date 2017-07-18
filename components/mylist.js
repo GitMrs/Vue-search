@@ -4,7 +4,8 @@ let my_list = {
 			data:{},
 			tips:false,
 			stateData:"暂无数据",
-			checked:[]
+			checked:[],
+			tip:true
 		}
 	},
 	template:`<div class="main">
@@ -14,7 +15,7 @@ let my_list = {
 					<span>{{i.name}}</span>
 					<span>{{i.dept_name}}</span>
 				</li>
-				<li>{{stateData}}</li>
+				<li v-if=tip style='text-align:center'>{{stateData}}</li>
 			</ul>
 	</div>`,
 	methods:{
@@ -32,10 +33,11 @@ let my_list = {
 	mounted(){
 		eventBus.$on("tips",(data)=>{
 			this.data = data
+			console.log(this.data)
 			if(this.data.length==0){
 				this.stateData="暂无数据"
 			}else{
-				this.stateData="添加数据"
+				this.tip = false
 			}
 		})
 	},

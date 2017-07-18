@@ -27,12 +27,6 @@
 			data:{
 				data:{}
 			},
-			beforeCreate(){
-				axios.get("./server/data.json").then((data)=>{
-					this.data = data.data
-					console.log(this.data)
-				})		
-			},
 			mounted(){
 				 eventBus.$on("checkeds",function(data){
 				 	console.log(data)
