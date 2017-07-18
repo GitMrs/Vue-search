@@ -1,0 +1,53 @@
+ {
+		"1":{
+			"name": "刘振(liuzhen)",
+			"id": "1",
+			"user_name": "liuzhen",
+			"role_id": "1",
+			"role_name": "超级管理员",
+			"dept_id": "147",
+			"dept_name": "研发部",
+			"state":false
+		},
+		"2":{
+			"name": "刘化(liuzhen)",
+			"id": "1",
+			"user_name": "liuzhen",
+			"role_id": "1",
+			"role_name": "超级管理员",
+			"dept_id": "147",
+			"dept_name": "研发部",
+			"state":false
+		},
+		"3":{
+			"name": "刘叶(liuzhen)",
+			"id": "1",
+			"user_name": "liuzhen",
+			"role_id": "1",
+			"role_name": "超级管理员",
+			"dept_id": "147",
+			"dept_name": "研发部",
+			"state":false
+		},
+		"14":{
+			"name": "匡健锋(kuangjianfeng)",
+			"id": "14",
+			"user_name": "kuangjianfeng",
+			"role_id": "4",
+			"role_name": "管理员",
+			"dept_id": null,
+			"dept_name": null,
+			"state":false
+		},
+		"16":{
+			"name": "井西超(jingxichao)",
+			"id": "16",
+			"user_name": "jingxichao",
+			"role_id": "4",
+			"role_name": "管理员",
+			"dept_id": null,
+			"dept_name": null,
+			"state":false
+		}
+}
+

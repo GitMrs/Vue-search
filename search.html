@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>搜索</title>
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<div class="box">
+			<a href=""></a>
+			<my-heander ></my-heander>
+			<my-list></my-list>
+			<my-tips></my-tips>
+		</div>
+	</body>
+	<script src="../lib/vue.min.js"></script>
+	<script src="components/header.js"></script>
+	<script src="components/mylist.js"></script>
+	<script src="components/tips.js"></script>
+	<script src="../lib/axios.js"></script>
+	<script>
+		var eventBus = new Vue()
+		new Vue({
+			el:".box",
+			data:{
+				data:{}
+			},
+			beforeCreate(){
+				axios.get("./server/data.json").then((data)=>{
+					this.data = data.data
+					console.log(this.data)
+				})		
+			},
+			mounted(){
+				 eventBus.$on("checkeds",function(data){
+				 	console.log(data)
+				 })
+			},
+			components:{
+				"my-heander":my_header,
+				"my-list":my_list,
+				"my-tips":tips
+			}
+		})
+	</script>
+</html>
